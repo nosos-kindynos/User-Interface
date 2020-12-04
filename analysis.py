@@ -1,7 +1,5 @@
 from tkinter import *
 from tkinter import ttk
-#from master_correction import analysed_data
-#from master_correction import person
 from main import admno
 from modelling import *
 from risk_estimation import *
@@ -317,7 +315,7 @@ def create():
    l[2].reverse()
 
    risk1=[0.33,0.67,1.0,1.33,1.67]
-   risk2=['very low','low','medium','high','very high','severe']
+   risk2=['VERY LOW','LOW','MODERATE','HIGH','VERY HIGH','SEVERE']
 
    total=risk2[-1]
    for i in range (len(risk1)):
@@ -347,9 +345,9 @@ def create():
            Label(frame1, text=r).grid(row=n1+1, column=1,sticky=W)
            n1+=1
 
-   status='negative'
+   status='NEGATIVE'
    if '*' in name:
-      status='positive'
+      status='POSITIVE'
 
 
    Label(frame2, text="  Infection Status: "+status).grid(row=0,sticky=W)
@@ -368,7 +366,7 @@ def create():
            Label(frame2, text=r).grid(row=n2+1, column=1,sticky=W)
            n2+=1
 
-   Button(frame1, text='Update contacts', command=update).grid(row=n1+1,column=0,pady=15)
+   Button(frame1, text='Update Contacts', command=update).grid(row=n1+1,column=0,pady=15)
 
    Button(frame2, text="Change Infection Status", command=toggle).grid(row=n2+1,column=0,pady=15,padx=5)
 
